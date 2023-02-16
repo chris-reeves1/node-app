@@ -18,6 +18,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh 'docker run --rm -p 5000:5000 --name nodejs-project nodejs-project:${BUILD_NUMBER}'
+                sh 'npm start &'
             }
         }
     }
